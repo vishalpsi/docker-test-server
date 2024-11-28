@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  docker-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    volumes:
+      - ./src:/usr/src/app/src
+    command: ["npm", "start"]
